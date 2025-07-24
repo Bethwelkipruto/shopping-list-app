@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Milk",
+      "quantity": "2 Litres",
+      "purchased": false
+    },
+    {
+      "id": 2,
+      "name": "Bread",
+      "quantity": "1 Loaf",
+      "purchased": true
+    }
+  ]
+}
