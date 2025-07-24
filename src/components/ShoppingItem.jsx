@@ -1,6 +1,8 @@
 import React from "react";
 
 function ShoppingItem({ item, onDelete, onToggleBought }) {
+  const { id, name, price, image, bought } = item;
+
   return (
     <div
       className="item-card"
@@ -10,17 +12,41 @@ function ShoppingItem({ item, onDelete, onToggleBought }) {
         marginBottom: "10px",
       }}
     >
-      <img src={item.image} alt={item.name} style={{ width: "100px" }} />
-      <h3>{item.name}</h3>
-      <p>Price:  ksh{item.price}</p>
-      <p>Status: {item.bought ? "Bought" : "Not bought"}</p>
+      {/* ✅ Only show image if available */}
+      {image ? (
+        <img
+          src={image}
+          alt={name}
+          style={{ width: "100px", borderRadius: "8px" }}
+        />
+      ) : (
+        <div
+          style={{
+            width: "100px",
+            height: "100px",
+            backgroundColor: "#eee",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: "8px",
+            fontSize: "12px",
+            color: "#666",
+          }}
+        >
+          No image
+        </div>
+      )}
 
-      <button onClick={() => onToggleBought(item.id, item.bought)}>
-        {item.bought ? "Mark as Unbought" : "Mark as Bought"}
+      <h3>{name}</h3>
+      <p>Price: ksh{price}</p>
+      <p>Status: {bought ? "Bought" : "Not bought"}</p>
+
+      <button onClick={() => onToggleBought(id, bought)}>
+        {bought ? "Mark as Unbought" : "Mark as Bought"}
       </button>
 
       <button
-        onClick={() => onDelete(item.id)}
+        onClick={() => onDelete(id)}
         style={{
           marginLeft: "10px",
           backgroundColor: "tomato",

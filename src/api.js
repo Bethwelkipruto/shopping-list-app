@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3000";
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
 const ITEMS_URL = `${BASE_URL}/items`; // ✅ Corrected: BASE_URL already includes /items
 
 // GET: Fetch all items
@@ -10,6 +10,8 @@ export async function fetchItems() {
 
 // POST: Add a new item
 export async function addItem(item) {
+  console.log("post request received")
+  console.log("post item ",item)
   const res = await fetch(ITEMS_URL, {
     method: "POST",
     headers: {
@@ -17,7 +19,7 @@ export async function addItem(item) {
     },
     body: JSON.stringify(item)
   });
-
+console.log("post response:",res)
   if (!res.ok) throw new Error("Failed to add item");
 
   const text = await res.text();

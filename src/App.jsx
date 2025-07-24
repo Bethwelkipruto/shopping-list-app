@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import ShoppingList from "./components/ShoppingList";
 import AddItemForm from "./components/AddItemForm";
 import About from "./components/About";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -11,25 +12,32 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3000/items")
+    fetch("http://localhost:3001/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);
 
   const handleAddItem = (newItem) => setItems([...items, newItem]);
-  const handleDeleteItem = (id) => setItems(items.filter((item) => item.id !== id));
+
+  const handleDeleteItem = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
+
   const toggleBought = (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, bought: !item.bought } : item
     );
     setItems(updatedItems);
+
     const itemToUpdate = items.find((item) => item.id === id);
-    fetch(`http://localhost:3000/items/${id}`, {
+
+    fetch(`http://localhost:3001/items/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ bought: !itemToUpdate.bought })
+      body: JSON.stringify({ bought: !itemToUpdate.bought }),
     });
   };
+
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
@@ -37,26 +45,27 @@ function App() {
       <div className={darkMode ? "app dark" : "app light"}>
         <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Routes>
-         <Route
-  path="/"
-  element={
-    <div>
-      <AddItemForm onAddItemSuccess={handleAddItem} />
-      <ShoppingList
-        items={items}
-        deleteItem={handleDeleteItem}
-        toggleBought={toggleBought}
-      />
-    </div>
-  }
-/>
-
-        <Route path="/add" element={<AddItemForm onaddItemSuccess={handleAddItem} />} />
+          <Route
+            path="/"
+            element={
+              <div>
+                <AddItemForm onAddItemSuccess={handleAddItem} />
+                <ShoppingList
+                  items={items}
+                  deleteItem={handleDeleteItem}
+                  toggleBought={toggleBought}
+                />
+              </div>
+            }
+          />
+          {/* ✅ FIXED THIS LINE BELOW */}
+          <Route path="/add" element={<AddItemForm onAddItemSuccess={handleAddItem} />} />
           <Route path="/about" element={<About />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
 }
-export default App;
 
+export default App;

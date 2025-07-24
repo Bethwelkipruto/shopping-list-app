@@ -6,7 +6,7 @@ const [items, setItems] = useState([]);
 
 
 useEffect(() => {
-fetch("http://localhost:3000/items")
+fetch("http://localhost:3001/items")
 .then(res => res.json())
 .then(data => {
 console.log("Fetched data:", data); 
@@ -16,7 +16,7 @@ setItems(data);
 
 
 const handleDelete = (id) => {
-fetch(`http://localhost:3000/items/${id}`, {
+fetch(`http://localhost:3001/items/${id}`, {
 method: "DELETE"
 }).then(() => {
 setItems(prevItems => prevItems.filter(item => item.id !== id));
@@ -25,7 +25,7 @@ setItems(prevItems => prevItems.filter(item => item.id !== id));
 
 
 const handleToggleBought = (id, currentStatus) => {
-fetch(`http://localhost:3000/items/${id}`, {
+fetch(`http://localhost:3001/items/${id}`, {
 method: "PATCH",
 headers: {
 "Content-Type": "application/json"

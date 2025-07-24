@@ -1,42 +1,28 @@
+/* Root Container */
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* Base Body Styling */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
+/* App Container */
 .app {
-  background-color: #f5f5f5;
-  color: #333;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   transition: background 0.3s, color 0.3s;
+}
+
+.app.light {
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 .app.dark {
@@ -52,6 +38,9 @@ body {
   background-color: #4caf50;
   padding: 10px 20px;
   color: white;
+   position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar.dark {
@@ -69,6 +58,7 @@ body {
   text-decoration: underline;
 }
 
+/* Dark Mode Toggle Button */
 .toggle-btn {
   padding: 8px 12px;
   border: none;
@@ -77,51 +67,25 @@ body {
   color: #4caf50;
   font-weight: bold;
   border-radius: 5px;
+  transition: background 0.3s;
 }
 
 .toggle-btn:hover {
   background: #ddd;
 }
 
-/* About Page */
-.about {
-  padding: 20px;
-}
-
-.home {
-  padding: 20px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-/* App.css */
-
-.app {
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-}
-
-/* AddItemForm Styling */
+/* Add Item Form */
 .add-item-form {
   max-width: 400px;
-  margin: 40px auto; /* Center the form vertically & horizontally */
+  margin: 40px auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app.dark .add-item-form {
+  background-color: #1e1e1e;
 }
 
 .add-item-form h2 {
@@ -146,6 +110,12 @@ body {
   border: 1px solid #ccc;
 }
 
+.app.dark .add-item-form input {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
 .add-item-form button {
   width: 100%;
   padding: 10px;
@@ -155,6 +125,12 @@ body {
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.add-item-form button:hover {
+  transform: scale(1.02);
+  background-color: #333;
 }
 
 .add-item-form button:disabled {
@@ -166,4 +142,49 @@ body {
   color: red;
   text-align: center;
   margin-bottom: 10px;
+}
+
+/* About & Home Pages */
+.about,
+.home {
+  padding: 20px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .add-item-form {
+    margin-top: 60px;
+  }
+}
+
+/* Logo (optional) */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Optional Animation */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
