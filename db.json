@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Mini Polaroid Camera",
       "price": 7000,
-      "image": "",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjouiQxStm6L_gKMj8rKjVNTDzfp5VlcNz6w&s",
       "bought": true
     },
     {
@@ -27,20 +27,6 @@
       "price": 500,
       "image": "",
       "bought": false
-    },
-    {
-      "id": "5",
-      "name": "Fairy Lights",
-      "price": 1700,
-      "image": "https://via.placeholder.com/100x100.png?text=Fairy+Lights",
-      "bought": false
-    },
-    {
-      "id": "6",
-      "name": "wireless headphones",
-      "price": 5000,
-      "image": "",
-      "bought": true
     }
   ]
 }

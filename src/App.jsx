@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { fetchItems, addItem, deleteItem, updateItem } from "../api";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import ShoppingList from "./components/ShoppingList";
@@ -17,8 +16,8 @@ function App() {
       .then((data) => setItems(data));
   }, []);
 
-  const addItem = (newItem) => setItems([...items, newItem]);
-  const deleteItem = (id) => setItems(items.filter((item) => item.id !== id));
+  const handleAddItem = (newItem) => setItems([...items, newItem]);
+  const handleDeleteItem = (id) => setItems(items.filter((item) => item.id !== id));
   const toggleBought = (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, bought: !item.bought } : item
@@ -35,14 +34,24 @@ function App() {
 
   return (
     <Router>
-      <div className={darkMode ? "App dark" : "App light"}>
+      <div className={darkMode ? "app dark" : "app light"}>
         <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Routes>
-          <Route
-            path="/"
-            element={<ShoppingList items={items} deleteItem={deleteItem} toggleBought={toggleBought} />}
-          />
-          <Route path="/add" element={<AddItemForm addItem={addItem} />} />
+         <Route
+  path="/"
+  element={
+    <div>
+      <AddItemForm onAddItemSuccess={handleAddItem} />
+      <ShoppingList
+        items={items}
+        deleteItem={handleDeleteItem}
+        toggleBought={toggleBought}
+      />
+    </div>
+  }
+/>
+
+        <Route path="/add" element={<AddItemForm onaddItemSuccess={handleAddItem} />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>

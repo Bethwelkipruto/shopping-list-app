@@ -25,6 +25,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -102,4 +104,66 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+/* App.css */
+
+.app {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* AddItemForm Styling */
+.add-item-form {
+  max-width: 400px;
+  margin: 40px auto; /* Center the form vertically & horizontally */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-item-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.add-item-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.add-item-form input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.add-item-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-item-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
 }
