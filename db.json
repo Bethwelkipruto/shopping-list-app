@@ -1,16 +1,46 @@
 {
   "items": [
     {
-      "id": 1,
-      "name": "Milk",
-      "quantity": "2 Litres",
-      "purchased": false
+      "id": "1",
+      "name": "Mini Polaroid Camera",
+      "price": 7000,
+      "image": "",
+      "bought": true
     },
     {
-      "id": 2,
-      "name": "Bread",
-      "quantity": "1 Loaf",
-      "purchased": true
+      "id": "2",
+      "name": "Pink Cat Mug",
+      "price": 400,
+      "image": "",
+      "bought": true
+    },
+    {
+      "id": "3",
+      "name": "Scented Candle - Vanilla & Sage",
+      "price": 1000,
+      "image": "",
+      "bought": true
+    },
+    {
+      "id": "4",
+      "name": "Pastel Gel Pens (Set of 10)",
+      "price": 500,
+      "image": "",
+      "bought": false
+    },
+    {
+      "id": "5",
+      "name": "Fairy Lights",
+      "price": 1700,
+      "image": "https://via.placeholder.com/100x100.png?text=Fairy+Lights",
+      "bought": false
+    },
+    {
+      "id": "6",
+      "name": "wireless headphones",
+      "price": 5000,
+      "image": "",
+      "bought": true
     }
   ]
 }
