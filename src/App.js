@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './Components/NavBar';
-import About from './Components/About';
+import NavBar from './components/NavBar';
+import About from './components/About';
 import './App.css';
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
 
   return (
     <Router>
-      <div className={`app ${darkMode ? 'dark' : ''}`}>
+      <div className={darkMode ? "app dark" : "app"}>
         <NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <Routes>
-          <route path="/" element={
+          <Route path="/" element={
               <div className="home">
                 <h1>Welcome to SwiftBasket! Thanks for stopping by.</h1>
               </div>
