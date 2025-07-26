@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import About from './components/About';
+import NavBar from './Components/NavBar';
+import About from './Components/About';
 import './App.css';
 
 function App() {
