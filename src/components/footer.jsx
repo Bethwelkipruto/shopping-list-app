@@ -5,7 +5,7 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="footer">
-      <p>© {year} Shopping List App. Built with React.</p>
+      <p>© {year} SwiftBasket | Your smart way to organize your shopping items.</p>
     </footer>
   );
 }

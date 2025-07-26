@@ -1,4 +1,4 @@
-/* Navbar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -18,7 +18,7 @@
   font-weight: bold;
 }
 
-/* Links */
+
 .links {
   display: flex;
   gap: 15px;
@@ -37,7 +37,7 @@
   text-decoration: underline;
 }
 
-/* Toggle Button */
+
 .toggle-btn {
   padding: 8px 12px;
   border: none;
@@ -55,14 +55,14 @@
   background: #ddd;
 }
 
-/* Mobile Menu Icon */
+
 .menu-icon {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
   .links {
     display: none;

@@ -12,7 +12,7 @@ function ShoppingItem({ item, onDelete, onToggleBought }) {
         marginBottom: "10px",
       }}
     >
-      {/* ✅ Only show image if available */}
+      {}
       {image ? (
         <img
           src={image}

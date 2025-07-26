@@ -119,7 +119,7 @@ function AddItemForm({ onAddItemSuccess }) {
         />
       </div>
 
-      {/* ✅ Image upload field */}
+      {}
       <div className="form-group">
         <label htmlFor="itemImage">Image (optional):</label>
         <input

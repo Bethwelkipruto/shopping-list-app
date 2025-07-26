@@ -11,20 +11,16 @@ function NavBar({darkMode, toggleDarkMode}) {
 
     return (
         <nav className={`navbar ${darkMode ? 'dark' : ''}`}>
-            <h2 className="logo">🛒 Shopping List</h2>
+          <ul className= {`links ${menuOpen ? 'active' : ''}`}>
+                    <li><Link to="/" onClick={() => setMenuOpen(false)}><FaHome /> Home</Link></li>
+        <li><Link to="/about" onClick={() => setMenuOpen(false)}><FaInfoCircle /> About</Link></li>
+            </ul>      
+
+            <div className="logo">🛒 SwiftBasket</div>
 
             <div className="menu-icon" onClick={toggleMenu}>
                 {menuOpen ? <FaTimes /> : <FaBars />}
                 </div>
-
-                <div className= {`links ${menuOpen ? 'active' : ''}`}>
-                    <Link to="/" onClick={() => setMenuOpen(false)}>
-          <FaHome /> Home
-        </Link>
-        <Link to="/about" onClick={() => setMenuOpen(false)}>
-          <FaInfoCircle /> About
-        </Link>
-      </div>
 
       <button onClick={toggleDarkMode} className="toggle-btn">
         {darkMode ? <FaSun /> : <FaMoon />}

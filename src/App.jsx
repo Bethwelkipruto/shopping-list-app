@@ -58,7 +58,7 @@ function App() {
               </div>
             }
           />
-          {/* ✅ FIXED THIS LINE BELOW */}
+          {}
           <Route path="/add" element={<AddItemForm onAddItemSuccess={handleAddItem} />} />
           <Route path="/about" element={<About />} />
         </Routes>
