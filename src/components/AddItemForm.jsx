@@ -72,9 +72,7 @@ function AddItemForm({ onAddItemSuccess }) {
       }
 
       const addedItem = await response.json();
-      if (onAddItemSuccess) {
-        onAddItemSuccess(addedItem);
-      }
+      onAddItemSuccess(addedItem);
 
       setItemName('');
       setItemPrice('');
