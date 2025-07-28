@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import ShoppingList from "./components/ShoppingList";
 import AddItemForm from "./components/AddItemForm";
 import About from "./components/About";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer.jsx";
 import "./App.css";
 
 function App() {
