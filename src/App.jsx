@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import ShoppingList from "./components/ShoppingList";
-import AddItemForm from "./components/AddItemForm";
-import About from "./components/About";
-import Footer from "./components/Footer.jsx";
+import NavBar from "./Components/NavBar";
+import ShoppingList from "./Components/ShoppingList";
+import AddItemForm from "./Components/AddItemForm";
+import About from "./Components/About";
+import Footer from "./Components/Footer";
 import "./App.css";
 
 function App() {
