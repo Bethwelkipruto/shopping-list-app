@@ -58,7 +58,7 @@ function AddItemForm({ onAddItemSuccess }) {
     };
 
     try {
-      const response = await fetch('http://localhost:3001/items', {
+      const response = await fetch('https://json-server-oudj.onrender.com/items', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,9 +88,10 @@ function AddItemForm({ onAddItemSuccess }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="add-item-form">
-      <h2>Add New Item to Shopping List</h2>
-      {error && <p className="error-message" style={{ color: 'red' }}>{error}</p>}
+    <div className="main-content">
+      <form onSubmit={handleSubmit} className="add-item-form">
+        <h2>Add New Item to Shopping List</h2>
+        {error && <p className="error-message">{error}</p>}
 
       <div className="form-group">
         <label htmlFor="itemName">Item Name:</label>
@@ -131,10 +132,11 @@ function AddItemForm({ onAddItemSuccess }) {
         />
       </div>
 
-      <button type="submit" disabled={isLoading}>
-        {isLoading ? 'Adding Item...' : 'Add to List'}
-      </button>
-    </form>
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? 'Adding Item...' : 'Add to List'}
+        </button>
+      </form>
+    </div>
   );
 }
 

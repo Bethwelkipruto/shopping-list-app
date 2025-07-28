@@ -12,7 +12,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3001/items")
+    fetch("https://json-server-oudj.onrender.com/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);
@@ -20,7 +20,11 @@ function App() {
   const handleAddItem = (newItem) => setItems([...items, newItem]);
 
   const handleDeleteItem = (id) => {
-    setItems(items.filter((item) => item.id !== id));
+    fetch(`https://json-server-oudj.onrender.com/items/${id}`, {
+      method: "DELETE"
+    }).then(() => {
+      setItems(items.filter((item) => item.id !== id));
+    });
   };
 
   const toggleBought = (id) => {
@@ -31,7 +35,7 @@ function App() {
 
     const itemToUpdate = items.find((item) => item.id === id);
 
-    fetch(`http://localhost:3001/items/${id}`, {
+    fetch(`https://json-server-oudj.onrender.com/items/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ bought: !itemToUpdate.bought }),
@@ -48,14 +52,11 @@ function App() {
           <Route
             path="/"
             element={
-              <div>
-                <AddItemForm onAddItemSuccess={handleAddItem} />
-                <ShoppingList
-                  items={items}
-                  deleteItem={handleDeleteItem}
-                  toggleBought={toggleBought}
-                />
-              </div>
+              <ShoppingList
+                items={items}
+                deleteItem={handleDeleteItem}
+                toggleBought={toggleBought}
+              />
             }
           />
           {}

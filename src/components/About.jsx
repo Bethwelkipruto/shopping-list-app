@@ -2,14 +2,19 @@ import React from 'react';
 
 function About() {
     return (
-        <div className="about-container">
-            <h1>About</h1>
-            <p>
-                This is a simple shopping list application built with React. It allows 
-                users to create, edit, and delete items in their shopping list.The app 
-                is designed to be responsive and supports dark mode for better user experience.
-            </p>
+        <div className="main-content">
+            <div className="about">
+                <h1>About SwiftBasket</h1>
+                <p>
+                    SwiftBasket is a modern, intuitive shopping list application built with React. 
+                    It helps you organize your shopping efficiently with features like item management, 
+                    price tracking, and a beautiful dark mode interface.
+                </p>
+                <p>
+                    Built with love using React, modern CSS, and a focus on user experience.
+                </p>
             </div>
+        </div>
     );
 }
 

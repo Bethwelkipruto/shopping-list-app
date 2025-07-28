@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import {FaHome, FaInfoCircle, FaMoon, FaSun, FaBars, FaTimes} from 'react-icons/fa';
+import {FaHome, FaInfoCircle, FaPlus, FaMoon, FaSun, FaBars, FaTimes} from 'react-icons/fa';
 import './NavBar.css';
 
 function NavBar({darkMode, toggleDarkMode}) {
@@ -13,6 +13,7 @@ function NavBar({darkMode, toggleDarkMode}) {
         <nav className={`navbar ${darkMode ? 'dark' : ''}`}>
           <ul className= {`links ${menuOpen ? 'active' : ''}`}>
                     <li><Link to="/" onClick={() => setMenuOpen(false)}><FaHome /> Home</Link></li>
+        <li><Link to="/add" onClick={() => setMenuOpen(false)}><FaPlus /> Add Item</Link></li>
         <li><Link to="/about" onClick={() => setMenuOpen(false)}><FaInfoCircle /> About</Link></li>
             </ul>      
 
