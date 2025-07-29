@@ -59,7 +59,6 @@ function App() {
               />
             }
           />
-          {}
           <Route path="/add" element={<AddItemForm onAddItemSuccess={handleAddItem} />} />
           <Route path="/about" element={<About />} />
         </Routes>
